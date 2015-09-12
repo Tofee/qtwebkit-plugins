@@ -17,7 +17,6 @@ UI_DIR = $$PWD/../build
 SOURCES += $$PWD/plugin.cpp
 HEADERS += $$PWD/plugin.h
 
-include($$PWD/spellcheck/spellcheck.pri)
 include($$PWD/notifications/notifications.pri)
 
 !mac:unix {

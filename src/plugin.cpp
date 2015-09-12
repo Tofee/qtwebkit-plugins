@@ -16,7 +16,6 @@
 * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 * ============================================================ */
 #include "plugin.h"
-#include "spellcheck/spellcheck.h"
 #include "notifications/notificationpresenter.h"
 
 QtWebKitPlugin::QtWebKitPlugin()
@@ -25,15 +24,12 @@ QtWebKitPlugin::QtWebKitPlugin()
 
 bool QtWebKitPlugin::supportsExtension(Extension ext) const
 {
-    return (ext == SpellChecker || ext == Notifications);
+    return (ext == Notifications);
 }
 
 QObject* QtWebKitPlugin::createExtension(Extension ext) const
 {
     switch (ext) {
-    case SpellChecker:
-        return new SpellCheck();
-
     case Notifications:
         return new NotificationPresenter();
 
